@@ -27,6 +27,10 @@ app.use(express.json())
 app.use(cors()) 
 app.use('/api', routes)
 
+app.get('/', (req, res) => {
+  res.json({message: "success"})
+} )
+
 // Обработка ошибок, последний Middleware
 app.use(errorHandler)
 
