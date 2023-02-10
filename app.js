@@ -17,14 +17,14 @@ const port = process.env.PORT || 1111
 
 mongoose.set("strictQuery", false);
 mongoose
-  .connect(process.env.DB_URL) 
+  .connect("mongodb+srv://admin:tariel@cluster0.zh5hxgy.mongodb.net/stroyka?retryWrites=true&w=majority") 
   .then(()=> console.log('db ok'))
   .catch((e)=> console.log('db error', e))
 
 app.use(express.static(path.resolve(__dirname, 'static')))
 app.use(fileUpload({}))
 app.use(express.json())
-app.use(cors())
+app.use(cors()) 
 app.use('/api', routes)
 
 // Обработка ошибок, последний Middleware
