@@ -23,6 +23,19 @@ export const postProducts = async (req, res) => {
  }
 }
 
+export const getAllPoducts = async (req, res) => {
+  try{
+    const products = await CardtSchema.find().exec();
+    
+    res.json(products)
+ } catch(e){
+  console.log(e);
+    res.status(500).json({
+      message: 'Не удалось создать статью', 
+    });
+ }
+}
+
 export const getSearchPoducts = async (req, res) => {
   try{
     const {searchQuery} = req.query
