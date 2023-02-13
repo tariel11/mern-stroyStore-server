@@ -1,9 +1,9 @@
 import Router  from 'express';
 const router = new Router()
 
-import card from './cart.js';
+import product from './product.js';
 
-router.use('/products', card)
+router.use('/products', product)
 
 
 export default router
